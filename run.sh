@@ -1,6 +1,7 @@
 #!/usr/bin/sh
 if [ "$1" == "start" ]; then
     echo "Starting server"
+    mkdir -p $(pwd)/work
     docker run -d -p 8888:8888 -v $(pwd)/work:/home/jovyan/work --name saditya-tda --platform linux/x86_64 saditya88/tda
     echo "Getting link"
     sleep 1
